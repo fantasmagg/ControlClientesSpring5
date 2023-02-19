@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<!--
+xmlns:th="http://www.thymeleaf.org" = eso espra poder manejar informacion dinamica en nuestra pagina html
+-->
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.thymeleat.org/extras/spring-security">
+    <head th:replace="layaut/plantilla :: head">
+        <title>inicio</title>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                </head>
+                <body>
+                    <header th:replace="layaut/plantilla :: header"></header>
+                    
+                    <section th:replace="layaut/botonesAgregar :: botonesAgregar"></section>
+                   <section th:replace="layaut/agregarCliente :: agregarCliente"></section>
+                     <section th:replace="layaut/listadoCliente :: listaCliente"></section>
+                    <footer th:replace="layaut/plantilla :: footer"></footer>
+                    <!--
+                    
+                    th:text="saludos" = eso es thymeleaf
+                    -->
+                    <!--con thymeleaf podemos usar exprecion lengua-->
+                    <!--
+                    sec:authorize="hasRole('ROLE_ADMIN')" HAI ESTAMOS DICIENDO QUE ese link solo lo pueden ver los que tienen el role
+                    admin, es como un if si el usuario tiene rol admin lo ve si no, pues no lo ve
+                    -->
+                   <!-- <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/agregar}">[[#{persona.crear}]]</a>
+
+                    <div th:if="${persona !=null and !persona.empty}">
+                        <table border="1">
+                            <tr>
+                                <th>[[#{lista.personaName}]]</th>
+                                <th>[[#{lista.personaApe}]]</th>
+                                <th>[[#{lista.personaEmail}]]</th>
+                                <th>[[#{lista.personaTele}]]</th>
+                                <th sec:authorize="hasRole('ROLE_ADMIN')">[[#{acction.editar}]]</th>
+                                <th sec:authorize="hasRole('ROLE_ADMIN')">[[#{acction.eliminar}]]</th>
+                            </tr>
+
+                            <!--eso es una bucle-->
+                          <!--  <tr th:each="persona: ${persona}">
+                                <td th:text="${persona.nombre}">[[#{lista.personaName}]]</td>
+                                <td th:text="${persona.apellido}">[[#{lista.personaApe}]]</td>
+                                <td th:text="${persona.email}">[[#{lista.personaEmail}]]</td>
+                                <td th:text="${persona.telefono}">[[#{lista.personaEmail}]]</td>
+                                <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/editar/} + ${persona.idPersona}" th:text="#{acction.editar}"></a></td>
+                                <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/eliminar(idPersona=${persona.idPersona})}" th:text="#{acction.eliminar}"></a></td>
+
+                            </tr>
+                        </table>
+                    </div>
+                    <div th:if="${persona== null or persona.empty}">
+                        la lista esta vacia
+                    </div>-->
+
+
+
+
+                </body>
+                </html>
